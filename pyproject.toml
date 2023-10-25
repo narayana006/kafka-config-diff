@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kafka-config-diff"
+version = "0.1.0"
+description = "Compare Kafka broker and topic configuration between clusters or against a baseline."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Narayana Vemburaj" }]
+keywords = ["kafka", "configuration", "drift", "diff"]
+dependencies = []
+
+[project.optional-dependencies]
+live = ["confluent-kafka>=2.3"]
+test = ["pytest>=7"]
+
+[project.urls]
+Homepage = "https://github.com/narayana006/kafka-config-diff"
+
+[project.scripts]
+kafka-config-diff = "kafka_config_diff.cli:main"
+
+[tool.setuptools]
+packages = ["kafka_config_diff"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
