@@ -1,0 +1,103 @@
+{
+  "label": "prod",
+  "brokers": {
+    "11": {
+      "node.id": "11",
+      "broker.rack": "use1-az11",
+      "process.roles": "broker",
+      "listeners": "SSL://:9093",
+      "advertised.listeners": "SSL://kafka-11.prod.example.internal:9093",
+      "controller.quorum.voters": "101@controller-1.prod.example.internal:9094,102@controller-2.prod.example.internal:9094,103@controller-3.prod.example.internal:9094",
+      "log.dirs": "/var/lib/kafka/data",
+      "num.network.threads": "3",
+      "num.io.threads": "16",
+      "default.replication.factor": "3",
+      "min.insync.replicas": "2",
+      "auto.create.topics.enable": "false",
+      "unclean.leader.election.enable": "false",
+      "log.retention.hours": "168",
+      "log.segment.bytes": "1073741824",
+      "message.max.bytes": "1048588",
+      "compression.type": "producer",
+      "delete.topic.enable": "true",
+      "ssl.keystore.location": "/etc/kafka/secrets/kafka-11.prod.example.internal.jks",
+      "ssl.keystore.password": null,
+      "ssl.client.auth": "required"
+    },
+    "12": {
+      "node.id": "12",
+      "broker.rack": "use1-az12",
+      "process.roles": "broker",
+      "listeners": "SSL://:9093",
+      "advertised.listeners": "SSL://kafka-12.prod.example.internal:9093",
+      "controller.quorum.voters": "101@controller-1.prod.example.internal:9094,102@controller-2.prod.example.internal:9094,103@controller-3.prod.example.internal:9094",
+      "log.dirs": "/var/lib/kafka/data",
+      "num.network.threads": "3",
+      "num.io.threads": "16",
+      "default.replication.factor": "3",
+      "min.insync.replicas": "2",
+      "auto.create.topics.enable": "false",
+      "unclean.leader.election.enable": "false",
+      "log.retention.hours": "168",
+      "log.segment.bytes": "1073741824",
+      "message.max.bytes": "1048588",
+      "compression.type": "producer",
+      "delete.topic.enable": "true",
+      "ssl.keystore.location": "/etc/kafka/secrets/kafka-12.prod.example.internal.jks",
+      "ssl.keystore.password": null,
+      "ssl.client.auth": "required"
+    },
+    "13": {
+      "node.id": "13",
+      "broker.rack": "use1-az13",
+      "process.roles": "broker",
+      "listeners": "SSL://:9093",
+      "advertised.listeners": "SSL://kafka-13.prod.example.internal:9093",
+      "controller.quorum.voters": "101@controller-1.prod.example.internal:9094,102@controller-2.prod.example.internal:9094,103@controller-3.prod.example.internal:9094",
+      "log.dirs": "/var/lib/kafka/data",
+      "num.network.threads": "3",
+      "num.io.threads": "8",
+      "default.replication.factor": "3",
+      "min.insync.replicas": "2",
+      "auto.create.topics.enable": "false",
+      "unclean.leader.election.enable": "false",
+      "log.retention.hours": "168",
+      "log.segment.bytes": "1073741824",
+      "message.max.bytes": "1048588",
+      "compression.type": "producer",
+      "delete.topic.enable": "true",
+      "ssl.keystore.location": "/etc/kafka/secrets/kafka-13.prod.example.internal.jks",
+      "ssl.keystore.password": null,
+      "ssl.client.auth": "required"
+    }
+  },
+  "topics": {
+    "__consumer_offsets": {
+      "cleanup.policy": "compact",
+      "compression.type": "producer",
+      "segment.bytes": "104857600",
+      "min.insync.replicas": "2"
+    },
+    "orders": {
+      "cleanup.policy": "delete",
+      "retention.ms": "604800000",
+      "min.insync.replicas": "2",
+      "max.message.bytes": "1048588",
+      "compression.type": "producer"
+    },
+    "payments": {
+      "cleanup.policy": "delete",
+      "retention.ms": "604800000",
+      "min.insync.replicas": "2",
+      "max.message.bytes": "1048588",
+      "compression.type": "producer"
+    },
+    "payments.dlq": {
+      "cleanup.policy": "delete",
+      "retention.ms": "1209600000",
+      "min.insync.replicas": "2",
+      "max.message.bytes": "1048588",
+      "compression.type": "producer"
+    }
+  }
+}

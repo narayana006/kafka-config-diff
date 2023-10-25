@@ -1,0 +1,3 @@
+# Settings we accept as different between staging and prod
+log.retention.hours     # staging keeps less data on purpose
+auto.create.topics.enable
